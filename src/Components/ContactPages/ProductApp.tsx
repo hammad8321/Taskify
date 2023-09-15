@@ -19,7 +19,8 @@ const ProductApp: React.FC = () => {
     else{
       
     alert("Enter Valid Data");
-    }
+}
+
   };
   
 

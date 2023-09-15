@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import "./App.css";
+import ContactIndex from './Components/ContactPages/ContactIndex';
 import reportWebVitals from './reportWebVitals';
+import  {InputFieldIndex} from './Components/ContactPages/InputFieldIndex';
+import ProductApp from './Components/ContactPages/ProductApp';
+
+
+//import ContactIndex from  "../Components/ContactPages/ContactIndex"
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <InputFieldIndex /> */}
+    <ProductApp/>
   </React.StrictMode>
 );
 

@@ -13,9 +13,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <React.StrictMode >
     {/* <InputFieldIndex /> */}
-    <ProductApp/>
+    <ProductApp />
   </React.StrictMode>
 );
 

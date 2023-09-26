@@ -5,10 +5,12 @@ import ProductList from "./ProductList";
 interface ProductListProps {
   producto: Product[];
   setProducto: React.Dispatch<React.SetStateAction<Product[]>>;
+  description:any
 }
 
 const DisplayProduct: React.FC<ProductListProps> = ({
   producto,
+  description,
   setProducto,
 }: ProductListProps) => {
   return (
@@ -18,7 +20,7 @@ const DisplayProduct: React.FC<ProductListProps> = ({
         <ProductList
           key={product.id}
          product={product}
-          // description={description}
+       //    description={description}
           producto={producto}
           setProducto={setProducto}
         />

@@ -3,11 +3,13 @@ import { Product } from "./InterfaceProduct";
 import InputProduct from "./InputProduct";
 import DisplayProduct from "./DisplayProduct";
 import RemoveAllProducts from "./RemoveAllProducts";
+import AddRandomContact, { productType } from "./AddRandomContact";
 
 const ProductApp: React.FC = () => {
   const [product, setProduct] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [producto, setProducto] = useState<Product[]>([]);
+  
 
   const handleRemoveAllProducts = () => {
     console.log("Removing");
@@ -32,21 +34,41 @@ const ProductApp: React.FC = () => {
       alert("Enter Valid Data");
     }
   };
+  const handleAddRandom = (pro: productType) => {
+    if (pro.productName && pro.productDesc) {
+      setProducto([
+        ...producto,
+        { id: Date.now(), product: pro.productName, description: pro.productDesc, isDone: false },
+      ]);
+      setProduct("");
+      setDescription("");
+      console.log(producto);
+    } else {
+      alert("Enter Valid Data");
+    }
+  };
 
   return (
     <div>
       <span> Product App </span>
      
       <RemoveAllProducts handleRemoveAllProducts={handleRemoveAllProducts} />
-      <button>Add Random </button>
+      <AddRandomContact
+        setDescription={setDescription}
+        setProduct={setProduct}
+        handleAdd={handleAddRandom}
+      />
+     
       <InputProduct
         product={product}
         description={description}
         setDescription={setDescription}
         setProduct={setProduct}
         handleAdd={handleAdd}
+       
+
       />
-      <DisplayProduct producto={producto} setProducto={setProducto} />
+      <DisplayProduct description={description} producto={producto} setProducto={setProducto}/>
     </div>
   );
 };
